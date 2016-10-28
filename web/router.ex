@@ -16,7 +16,7 @@ defmodule WhoIsRemote.Router do
   scope "/", WhoIsRemote do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    resources "/", UserController, only: [:index, :new, :create]
   end
 
   # Other scopes may use custom stacks.
